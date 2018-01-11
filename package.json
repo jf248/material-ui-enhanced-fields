@@ -1,0 +1,67 @@
+{
+  "name": "material-ui-enhanced-fields",
+  "version": "0.1.0",
+  "description": "Enhanced fields for material-ui. A TextFields with prefix, suffix and typeahead. A Combobox / autocomplete / typeahead with optional Chip input. Fully-customizable but with simple defaults.",
+  "author": "Joshua Freedman",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jf248/material-ui-enhanced-fields.git"
+  },
+  "keywords": [
+    "react",
+    "material-ui",
+    "enhanced fields",
+    "combobox",
+    "autocomplete",
+    "typeahead",
+    "select field",
+    "chip",
+    "chip input",
+    "chip field",
+    "downshift"
+  ],
+  "bugs": {
+    "url": "https://github.com/jf248/material-ui-enhanced-fields/issues"
+  },
+  "homepage": "https://github.com/jf248/material-ui-enhanced-fields#readme",
+  "dependencies": {
+    "@jf248/react-powerplug": "0",
+    "downshift": "^1.27.0",
+    "prop-types": "^15.6.0"
+  },
+  "peerDependencies": {
+    "material-ui": "0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.17",
+    "@storybook/addon-links": "^3.2.17",
+    "@storybook/react": "^3.2.17",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "eslint": "^4.15.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-react": "^7.5.1",
+    "gh-pages": "^1.1.0",
+    "material-ui": "^0.20.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "clean": "rm -r lib",
+    "prepublishOnly": "npm run lint && npm run clean && npm run build",
+    "build": "babel src -d lib",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -o storybook && gh-pages -d storybook && rm -r storybook"
+  }
+}

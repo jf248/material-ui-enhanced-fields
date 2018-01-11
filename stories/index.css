@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    margin: 10;
+    padding: 0;
+}
+
+a {
+    color: #039be5;
+    text-decoration-line: none;
+    cursor: pointer;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+code {
+    font-family: Courier, monospace;
+    background-color: rgba(0,0,0,0.04);
+    font-size: 85%;
+    white-space: pre;
+  }

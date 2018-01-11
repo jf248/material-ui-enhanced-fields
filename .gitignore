@@ -1,0 +1,5 @@
+# Exclude compiled files
+lib
+
+# npm files
+node_modules
