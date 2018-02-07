@@ -1,5 +1,5 @@
 # Exclude compiled files
-lib
+dist
 
 # npm files
 node_modules

@@ -4,9 +4,9 @@
   "description": "Enhanced fields for material-ui. A TextFields with prefix, suffix and typeahead. A Combobox / autocomplete / typeahead with optional Chip input. Fully-customizable but with simple defaults.",
   "author": "Joshua Freedman",
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -43,24 +43,29 @@
     "@storybook/addon-actions": "^3.2.17",
     "@storybook/addon-links": "^3.2.17",
     "@storybook/react": "^3.2.17",
-    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.12",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.18",
     "eslint": "^4.15.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "^7.5.1",
     "gh-pages": "^1.1.0",
     "material-ui": "^0.20.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
   },
   "scripts": {
     "lint": "eslint src",
-    "clean": "rm -r lib",
-    "prepublishOnly": "npm run lint && npm run clean && npm run build",
-    "build": "babel src -d lib",
+    "prepublishOnly": "npm run lint && npm run build",
+    "build": "webpack",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o storybook && gh-pages -d storybook && rm -r storybook"
   }
