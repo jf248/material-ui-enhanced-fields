@@ -147,7 +147,7 @@ function ComboboxField(props) {
       text = itemToString(item).toLowerCase();
       return text.startsWith(inputValue.toLowerCase());
     });
-    if (found) {
+    if (found && !!inputValue) {
       return {
         typeAheadText: inputValue + text.slice(inputValue.length),
         typeAheadItem,
@@ -301,9 +301,6 @@ function ComboboxField(props) {
                   selectedItemFocusIndex={selectedItemFocusIndex}
                   selectedItems={wrapInArray(selectedItem)}
                   {...TextFieldProps}
-                  floatingLabelFixed={(wrapInArray(selectedItem).length > 0
-                    || TextFieldProps.floatingLabelFixed
-                  )}
                   onKeyDown={callAll(
                     handleKeyDown({
                       downShiftProps,
@@ -322,13 +319,12 @@ function ComboboxField(props) {
                   groupedItems={groupedItems}
                   menuBottomElement={menuBottomElement}
                   menuBottomFixed={menuBottomFixed}
+                  MenuProps={MenuProps}
                   noMatchProps={noMatchProps}
                   noMatchText={noMatchText}
                   renderMenuItem={renderMenuItem}
                   selectedItems={wrapInArray(selectedItem)}
                   SubheaderProps={SubheaderProps}
-                  width={width}
-                  {...MenuProps}
                 />
               </div>
             );

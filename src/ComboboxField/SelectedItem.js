@@ -1,44 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Chip } from 'material-ui';
-import {blue300} from 'material-ui/styles/colors';
+import classnames from 'classnames';
+import { Chip, withStyles } from 'material-ui';
 
-const getStyles = props => {  // eslint-disable-line no-unused-vars
-  return {
-    chip: {
-      margin: '2px 0px',
-    },
-  };
-};
+const styles = theme => ({
+  chip: {
+    marginBottom: theme.spacing.unit,
+    marginRight: theme.spacing.unit / 2,
+  },
+  hasFocus: {
+    backgroundColor: theme.palette.primary.main,
+  },
+});
 
 SelectedItem.propTypes = {
+  classes: PropTypes.object,
+  className: PropTypes.string,
   deselect: PropTypes.func.isRequired,
   hasFocus: PropTypes.bool,
   item: PropTypes.any.isRequired,
   itemToString: PropTypes.func.isRequired,
-  style: PropTypes.object,
 };
 
 function SelectedItem(props) {
   const {
+    classes,
+    className: classNameProp,
     deselect,
     hasFocus,  // eslint-disable-line no-unused-vars
     item,
     itemToString,
-    style,
     ...rest
   } = props;
-  const styles = getStyles(props);
+
+  const className = classnames(
+    classes.chip,
+    { [classes.hasFocus]: hasFocus },
+    classNameProp,
+  );
+
   return (
     <Chip
-      backgroundColor={hasFocus ? blue300 : undefined}
-      onRequestDelete={deselect}
-      style={{...styles.chip, ...style}}
+      className={className}
+      onDelete={deselect}
+      label={itemToString(item)}
       {...rest}
-    >
-      {itemToString(item)}
-    </Chip>
+    />
   );
 }
 
-export default SelectedItem;
+export default withStyles(styles)(SelectedItem);

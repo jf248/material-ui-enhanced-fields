@@ -1,24 +1,24 @@
 import React, { Fragment, cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import { Divider } from 'material-ui';
+import { Divider, withStyles } from 'material-ui';
+import classnames from 'classnames';
 
-const getStyles = () => {
-  return {
-    listBottom: {
-      display: 'block',
-      lineHeight: '16px',
-      padding: '8px 16px 8px 24px',
-    },
-  };
-};
+const styles = () => ({
+  listBottom: {
+    display: 'block',
+    lineHeight: '16px',
+    padding: '8px 16px 8px 24px',
+  },
+});
 
 MenuBottom.propTypes = {
+  classes: PropTypes.object,
+  className: PropTypes.string,
   menuBottomElement: PropTypes.element,
 };
 
 function MenuBottom (props) {
-  const { menuBottomElement } =  props;
-  const styles = getStyles();
+  const { classes, className, menuBottomElement } =  props;
   if (!menuBottomElement) {
     return null;
   }
@@ -26,10 +26,10 @@ function MenuBottom (props) {
     <Fragment>
       <Divider/>
       {cloneElement( menuBottomElement,
-        {style: { ...styles.listBottom, ...menuBottomElement.props.style }}
+        {className: classnames(classes.listBottom, className)}
       )}
     </Fragment>
   );
 }
 
-export default MenuBottom;
+export default withStyles(styles)(MenuBottom);

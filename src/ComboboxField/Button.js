@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ArrowDown from 'material-ui-icons/ArrowDropDown';
+import ArrowUp from 'material-ui-icons/ArrowDropUp';
+import Close from 'material-ui-icons/Close';
+import { InputAdornment } from 'material-ui';
 
-import ArrowDown from 'material-ui/svg-icons/navigation/arrow-drop-down';
-import ArrowUp from 'material-ui/svg-icons/navigation/arrow-drop-up';
-import Close from 'material-ui/svg-icons/navigation/close';
-import { ButtonAdornment } from '..';
-
-ComboboxButton.propTypes = {
+Button.propTypes = {
   disabled: PropTypes.bool,
   downShiftProps: PropTypes.shape({
     clearSelection: PropTypes.func.isRequired,
@@ -17,7 +16,7 @@ ComboboxButton.propTypes = {
   multiple: PropTypes.bool,
 };
 
-function ComboboxButton (props) {
+function Button (props) {
   const {
     disabled,
     downShiftProps: { clearSelection, inputValue, isOpen, toggleMenu },
@@ -40,8 +39,10 @@ function ComboboxButton (props) {
   return (
     disabled
       ? null
-      : <ButtonAdornment onClick={handleClick} icon={<Icon/>} />
+      : (
+        <InputAdornment poisition="end" onClick={handleClick}><Icon/></InputAdornment>
+      )
   );
 }
 
-export default ComboboxButton;
+export default Button;

@@ -31,11 +31,13 @@
   "homepage": "https://github.com/jf248/material-ui-enhanced-fields#readme",
   "dependencies": {
     "@jf248/react-powerplug": "0",
+    "classnames": "^2.2.5",
     "downshift": "^1.27.0",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "material-ui": "material-ui@next",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
-    "material-ui": "0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
@@ -55,7 +57,6 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "^7.5.1",
     "gh-pages": "^1.1.0",
-    "material-ui": "^0.20.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "uglifyjs-webpack-plugin": "^1.1.8",

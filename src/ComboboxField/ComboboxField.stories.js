@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { State } from '@jf248/react-powerplug';
 
 import { ComboboxField } from '..';
+import Link from '../../stories/Link';
 
 const DATA = [
   {text: 'apple', group: 'fruits'},
@@ -39,15 +40,15 @@ const DATA = [
 const StoryComboxField = (props) => (
   <ComboboxField
     TextFieldProps={{
-      floatingLabelText: 'Choose a food',
-      hintText: 'Try typing "orange"...',
+      label: 'Choose a food',
+      placeholder: 'Try typing "orange"...',
       name: 'combobox',
     }}
     items={DATA}
     menuBottomElement={
-      <a onClick={action('Clicked on bottom element')} >
+      <Link onClick={action('Clicked on bottom element')} >
           Click here
-      </a>
+      </Link>
     }
     {...props}
     itemToString={item => item === null ? '' : item.text}
