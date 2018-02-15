@@ -34,7 +34,7 @@
     "classnames": "^2.2.5",
     "downshift": "^1.27.0",
     "material-ui-icons": "^1.0.0-beta.17",
-    "material-ui": "material-ui@next",
+    "material-ui": "^1.0.0-beta.31",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
