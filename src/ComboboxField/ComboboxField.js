@@ -44,6 +44,7 @@ ComboboxField.defaultProps = {
   multiple: false,
   width: 256,
   menuBottomFixed: true,
+  TextFieldProps: {},
 };
 
 function ComboboxField(props) {
