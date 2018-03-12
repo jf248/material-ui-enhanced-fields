@@ -72,7 +72,7 @@ function Input (props) {
     (props => React.createElement(SelectedItem, props));  // eslint-disable-line react/display-name
 
   const startAdornment = (
-    multiple
+    multiple && selectedItems.length > 0
       ? (
         selectedItems.map((item, index) => renderSelectedItem({
           hasFocus: index === selectedItemFocusIndex,
@@ -115,6 +115,10 @@ function Input (props) {
     className: classnames(classes.Input, InputPropsProp.className),
   };
 
+  const InputLabelProps = {
+    shrink: selectedItems.length > 0 || undefined,
+  };
+
   return (
     <TextField
       {...downShiftProps.getInputProps({
@@ -122,6 +126,7 @@ function Input (props) {
         disabled,
         inputProps,
         InputProps,
+        InputLabelProps,
         ...rest,
       })}
     />
