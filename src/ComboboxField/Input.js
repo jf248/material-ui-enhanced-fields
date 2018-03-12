@@ -39,13 +39,9 @@ const styles = theme => ({  // eslint-disable-line no-unused-vars
     flexFlow: 'row wrap',
     alignItems: 'center',
   },
-  withMarginTop: {
-    marginTop: theme.spacing.unit,
-  },
   withMarginBottom: {
     marginBottom: theme.spacing.unit,
   },
-
 });
 
 function Input (props) {
@@ -122,7 +118,6 @@ function Input (props) {
   return (
     <TextField
       {...downShiftProps.getInputProps({
-        className: classnames({[classes.withMarginTop]: withMargin}),
         disabled,
         inputProps,
         InputProps,
