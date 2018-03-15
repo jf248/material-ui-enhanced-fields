@@ -49,6 +49,8 @@ const DATA = [{text: 'apple', type: 'fruit'}, {text: 'tomato', type: 'veg'}];
 #### Props
 prop | type | default | description
 --- | --- | --- | ---
+`classes` | `Object` || Override the CSS classes (see implementation).
+`className` | 'string' || CSS class for the root element.
 `filterFunc` | `function(items: Array, query: string)` | |  Override the default function for filtering the items based on the field's input value.
 `items` | `Array` | `[]` | The array of possible items to select.
 `groupField` | `string` | `'group'` | The name of the key to group each item object by. (Optional, if items aren't objects or don't have a field to group by, they won't be grouped.)
@@ -62,7 +64,6 @@ prop | type | default | description
 `renderSelectedItem` | `function({deselect: function, hasFocus: boolean, item: any, itemToString: function})` || Override the default rendering (uses `Chip`s) of each selected item. (Only applies when the `multiple` is `true`.)   `deselect`: A callback that will deselect the item. `hasFocus`: True if item has been focused with keyboard.  `item`: The item to render.  `itemToString`: The `itemToString` prop supplied for convenience.
 `SubheaderProps` | `Object` || Props to be merged ino each `Subheader`.
 `TextFieldProps` | `Object` || Props for the `TextField` component.
-`width` | `number` | `256` | The width of the component.
 > In addtion, you can pass all the props of the `Downshift` component, except the `inputValue`. [See here.](Downshift)
 
 [storybook]: https://jf248.github.io/material-ui-enhanced-fields/

@@ -7,12 +7,9 @@ import { MenuBottom, MenuItem } from '.';
 
 const styles = theme => ({
   paper: {
-    position: 'absolute',
     zIndex: theme.zIndex.modal,
-    width: '100%',
   },
   listContainer: {
-    position: 'relative',
     overflowY: 'auto',
     maxHeight: 'calc(100vh - 32px)',
     backgroundColor: 'inherit',
@@ -113,11 +110,9 @@ function Menu(props) {
     }
   };
 
-  return (
-    <div style={{postion: 'relative'}}>
-      {isOpen && <Paper
-        className={classes.paper}
-      >
+  if (isOpen) {
+    return (
+      <Paper className={classes.paper} >
         <div
           className={classnames(classes.listContainer, MenuClassName)}
           {...MenuPropsProp}
@@ -127,9 +122,10 @@ function Menu(props) {
         </div>
         {menuBottomFixed && <MenuBottom menuBottomElement={menuBottomElement}/> }
       </Paper>
-      }
-    </div>
-  );
+    );
+  } else {
+    return null;
+  }
 }
 
 export default withStyles(styles)(Menu);

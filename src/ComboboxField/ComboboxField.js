@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { State } from '@jf248/react-powerplug';
 import Downshift from 'downshift';
+import { withStyles } from 'material-ui';
+import classnames from 'classnames';
 
 import { Input, Menu } from '.';
 import {
@@ -11,7 +13,17 @@ import {
   wrapInArray,
 } from '../utils';
 
+const styles = () => ({
+  root: {
+    position: 'relative',
+    display: 'inline-flex',
+    flexDirection: 'column',
+  }
+});
+
 ComboboxField.propTypes = {
+  classes: PropTypes.object.isRequired,
+  className: PropTypes.string,
   defaultInputValue: PropTypes.string,
   defaultSelectedItem: PropTypes.any,
   filterFunc: PropTypes.func,
@@ -32,7 +44,6 @@ ComboboxField.propTypes = {
   style: PropTypes.object,
   SubheaderProps: PropTypes.object,
   TextFieldProps: PropTypes.object,
-  width: PropTypes.number,
 };
 
 ComboboxField.defaultProps = {
@@ -49,6 +60,8 @@ ComboboxField.defaultProps = {
 
 function ComboboxField(props) {
   const {
+    classes,   // eslint-disable-line no-unused-vars
+    className: classNameProp,
     defaultInputValue,
     defaultSelectedItem,
     filterFunc,
@@ -69,7 +82,6 @@ function ComboboxField(props) {
     style,
     SubheaderProps,
     TextFieldProps,
-    width,
     ...rest
   } = props;
 
@@ -268,6 +280,8 @@ function ComboboxField(props) {
     return changes;
   };
 
+  const className = classnames(classNameProp, classes.root);
+
   return (
     <State
       key="state"
@@ -292,10 +306,12 @@ function ComboboxField(props) {
               typeAhead: {typeAheadItem, typeAheadText}
             } = itemsAndTypeAhead;
             return (
-              <div style={{width, position: 'relative', ...style }} >
+              <div
+                className={className}
+                style={style}
+              >
                 <Input
                   downShiftProps={downShiftProps}
-                  fullWidth
                   multiple={multiple}
                   renderSelectedItem={renderSelectedItem}
                   typeAheadText={typeAheadText}
@@ -338,4 +354,4 @@ function ComboboxField(props) {
   );
 }
 
-export default ComboboxField;
+export default withStyles(styles)(ComboboxField);

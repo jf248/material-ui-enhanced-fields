@@ -55,7 +55,6 @@ const StoryComboxField = (props) => (
   />
 );
 
-
 storiesOf('ComboboxField', module)
   .add('basic', () =>
     <StoryComboxField/>
