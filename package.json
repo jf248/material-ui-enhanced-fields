@@ -1,6 +1,6 @@
 {
   "name": "material-ui-enhanced-fields",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Enhanced fields for material-ui. A TextFields with prefix, suffix and typeahead. A Combobox / autocomplete / typeahead with optional Chip input. Fully-customizable but with simple defaults.",
   "author": "Joshua Freedman",
   "license": "MIT",
