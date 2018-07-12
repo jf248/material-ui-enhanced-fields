@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Typography, Divider, Paper, ListSubheader, withStyles } from 'material-ui';
+import { Typography, Divider, Paper, ListSubheader, withStyles } from '@material-ui/core';
 
 import { MenuBottom, MenuItem } from '.';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toggle } from 'material-ui';
+import { Toggle } from '@material-ui/core';
 import { State } from '@jf248/react-powerplug';
 
 export function PropToggler({toggleData=[], render}) {   // eslint-disable-line react/prop-types

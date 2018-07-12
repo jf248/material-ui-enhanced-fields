@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ArrowDown from 'material-ui-icons/ArrowDropDown';
-import ArrowUp from 'material-ui-icons/ArrowDropUp';
-import Close from 'material-ui-icons/Close';
-import { InputAdornment } from 'material-ui';
+import ArrowDown from '@material-ui/icons/ArrowDropDown';
+import ArrowUp from '@material-ui/icons/ArrowDropUp';
+import Close from '@material-ui/icons/Close';
+import { InputAdornment } from '@material-ui/core';
 
 Button.propTypes = {
   disabled: PropTypes.bool,

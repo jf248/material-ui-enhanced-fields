@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { State } from '@jf248/react-powerplug';
 import Downshift from 'downshift';
-import { withStyles } from 'material-ui';
+import { withStyles } from '@material-ui/core';
 import classnames from 'classnames';
 
 import { Input, Menu } from '.';

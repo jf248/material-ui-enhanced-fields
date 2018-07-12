@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Typography, withStyles } from 'material-ui';
+import { Typography, withStyles } from '@material-ui/core';
 
 const styles = theme => ({
   menuItem: {

@@ -1,6 +1,6 @@
 import React, { Fragment, cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import { Divider, withStyles } from 'material-ui';
+import { Divider, withStyles } from '@material-ui/core';
 import classnames from 'classnames';
 
 const styles = () => ({
